@@ -14,7 +14,44 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <form [formGroup]="form">
+      <ion-item>
+        <ion-label position="stacked">Input text</ion-label>
+        <ion-input type="text" formControlName="inputText"
+                   placeholder="type something"></ion-input>
+        <ion-note slot="error"> Please enter a valid text</ion-note>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Check box</ion-label>
+        <ion-checkbox position="fixed" formControlName="checkBox"></ion-checkbox>
+        <ion-note slot="error"> Please select check box option</ion-note>
+      </ion-item>
+
+      <ion-list >
+        <ion-radio-group formControlName="radioButtonGroup" >
+          <ion-list-header>
+            <ion-label>Radio button Group</ion-label>
+          </ion-list-header>
+
+          <ion-item>
+            <ion-label>Selection1</ion-label>
+            <ion-radio slot="start" value="Selection1"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Selection2</ion-label>
+            <ion-radio slot="start" value="Selection2"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Selection3</ion-label>
+            <ion-radio slot="start" value="Selection3"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+        <ion-note slot="error"> Please select option</ion-note>
+      </ion-list>
+    </form>
+
   </div>
 </ion-content>
